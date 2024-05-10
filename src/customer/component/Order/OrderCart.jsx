@@ -22,10 +22,10 @@ const OrderCart = () => {
                 </div>
             </div>
         </Grid>
-        <Grid item sx={2}>
+        <Grid item xs={2}>
             <p>₹1099</p>
         </Grid>
-        <Grid item sx={3}>
+        <Grid item xs={3}>
             {true && 
             <div className='pr-9'>
                 <p>
