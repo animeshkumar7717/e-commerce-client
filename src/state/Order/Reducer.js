@@ -1,27 +1,27 @@
-import { 
-    ADD_ITEM_TO_CART_FAILURE, 
-    ADD_ITEM_TO_CART_REQUEST, 
-    ADD_ITEM_TO_CART_SUCCESS, 
-    GET_CART_FAILURE, 
-    GET_CART_REQUEST, 
-    GET_CART_SUCCESS, 
-    REMOVE_CART_ITEM_FAILURE, 
-    REMOVE_CART_ITEM_REQUEST, 
-    REMOVE_CART_ITEM_SUCCESS, 
-    UPDATE_CART_ITEM_FAILURE, 
-    UPDATE_CART_ITEM_REQUEST, 
-    UPDATE_CART_ITEM_SUCCESS
-} from "./ActionTypes";
+import { CREAT_ORDER_FAILURE, CREAT_ORDER_REQUEST, CREAT_ORDER_SUCCESS, GET_ORDER_BY_ID_FAILURE, GET_ORDER_BY_ID_REQUEST, GET_ORDER_BY_ID_SUCCESS } from './ActionTypes';
 
 const initialState = {
-    cart: null,
+    orders: [],
+    order: null,
+    error: null,
     isLoading: false,
-    error: false,
-    cartItems: []
 }
 
-export const cartReducer = (state = initialState, action) => {
+export const orderReducer = (state = initialState, action) => {
     switch (action.type) {
-        
+        case CREAT_ORDER_REQUEST:
+            return { ...state, isLoading: true, error: null }
+        case GET_ORDER_BY_ID_REQUEST:
+            return { ...state, isLoading: true, error: null }
+        case CREAT_ORDER_SUCCESS:
+            return { ...state, isLoading: false, success: true, order: action.payload, error: null }
+        case GET_ORDER_BY_ID_SUCCESS:
+            return { ...state, isLoading: false, order: action.payload, error: null }
+        case CREAT_ORDER_FAILURE:
+            return { ...state, isLoading: false, error: action.paylaod }
+        case GET_ORDER_BY_ID_FAILURE:
+            return { ...state, isLoading: false, error: action.paylaod }
+        default:
+            return state
     }
 }

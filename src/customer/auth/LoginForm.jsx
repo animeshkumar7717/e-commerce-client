@@ -7,11 +7,9 @@ import { getUser, login } from '../../state/Auth/action'
 const LoginForm = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-
   const jwt = localStorage.getItem("jwt");
   const { auth } = useSelector(store=>store)
 
-  console.log('authauth', auth);
   useEffect(()=>{
     if(jwt) {
       dispatch(getUser(jwt));
@@ -28,7 +26,6 @@ const LoginForm = () => {
       password: data.get("password")
     }
     dispatch(login(userData))
-    console.log({userData});
   }
 
 

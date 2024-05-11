@@ -27,7 +27,6 @@ export const register = (userData) => async(dispatch) => {
         if(user.jwt) {
             localStorage.setItem("jwt", user.jwt)
         }
-        console.log('user', user);
         dispatch(registerSuccess(user.jwt));
     } catch (error) {
         dispatch(registerFailure(error.message));
@@ -69,7 +68,6 @@ export const getUser = (jwt) => async(dispatch) => {
             }
         });
         const user = response.data;
-        console.log('useruser--->>>', user);
         if(user.jwt) {
             localStorage.setItem("jwt", user.jwt)
         }

@@ -19,7 +19,6 @@ const HomeSectionCarosel = ({ data, sectionName }) => {
     const syncActiveIndex = ({ item }) => {
         const index = items.findIndex((element) => element.key === item.key);
         setActiveIndex(index);
-        console.log("syncActiveIndex called with index:", index);
       };
          
 

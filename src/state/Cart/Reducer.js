@@ -16,7 +16,7 @@ import {
 const initialState = {
     cart: null,
     isLoading: false,
-    error: false,
+    error: null,
     cartItems: []
 }
 
@@ -38,9 +38,9 @@ export const cartReducer = (state = initialState, action) => {
         case UPDATE_CART_ITEM_REQUEST:
             return { ...state, isLoading: true}
         case REMOVE_CART_ITEM_SUCCESS:
-            return { ...state, cartItems: state.cartItems.filter((item)=> item.id !== action.payload), isLoading: false}
+            return { ...state, deleteCartItem: action.payload, isLoading: false}
         case UPDATE_CART_ITEM_SUCCESS:
-            return { ...state, cartItems: state.cartItems.map((item)=> item.id === action.payload.id ? action.payload: item), isLoading: false}
+            return { ...state, updateCartItem: action.payload, isLoading: false}
         case REMOVE_CART_ITEM_FAILURE:
         case UPDATE_CART_ITEM_FAILURE:
             return { ...state, error: action.payload, isLoading: false}
