@@ -19,7 +19,7 @@ const DeliveryAddress = () => {
             city: data.get('city'),
             state: data.get('state'),
             zipCode: data.get('zip'),
-            Mobile: data.get('mobile'),
+            mobile: data.get('mobile'),
 
         }  
         const orderData = {address, navigate}
