@@ -21,9 +21,6 @@ export const customerProductReducer = (state = initialState, action) => {
         case FIND_PRODUCT_FAILURE:
         case FIND_PRODUCT_BY_ID_FAILURE:
             return { ...state, isLoading: false, error: action.payload }
-        
-
-
         default:
             return state;
     }

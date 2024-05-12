@@ -30,7 +30,6 @@ const RegisterForrm = () => {
       password: data.get("password")
     }
     dispatch(register(userData));
-    console.log({userData});
   }
 
 
