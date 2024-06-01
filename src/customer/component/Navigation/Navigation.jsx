@@ -427,6 +427,7 @@ export default function Navigation() {
                       >
                         <MenuItem 
                           onClick={handleCloseUserMenu}
+                          // onClick={()=>navigate('/')}
                         >
                           Profile
                         </MenuItem>
